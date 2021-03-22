@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\DependencyInjection\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SGP.Domain\SGP.Domain.csproj" />
   </ItemGroup>
 
