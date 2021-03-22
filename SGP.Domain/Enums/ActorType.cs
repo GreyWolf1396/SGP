@@ -4,5 +4,6 @@
     {
         Deck,
         Player,
+        Team
     }
 }

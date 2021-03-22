@@ -2,7 +2,7 @@
 
 namespace SGP.Domain
 {
-    public class Actor : BaseType
+    public class Actor : BaseObject
     {
         public IEnumerable<Attribute> Characteristics { get; set; }
 

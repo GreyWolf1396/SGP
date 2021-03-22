@@ -2,7 +2,7 @@
 
 namespace SGP.Domain
 {
-    public class Action : BaseType
+    public class Action : BaseObject
     {
         public string MechanicId { get; set; }
 

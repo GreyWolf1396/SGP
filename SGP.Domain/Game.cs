@@ -2,7 +2,7 @@
 
 namespace SGP.Domain
 {
-    public class Game : BaseType
+    public class Game : BaseObject
     {
         IEnumerable<Attribute> GameAttributes { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace SGP.Domain
 {
-    public class Mechanic : BaseType
+    public class Mechanic : BaseObject
     {
         public string PhaseId { get; set; }
 

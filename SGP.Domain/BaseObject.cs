@@ -1,8 +1,8 @@
 ﻿namespace SGP.Domain
 {
-    public abstract class BaseType
+    public abstract class BaseObject
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 

@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{4AAC52
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameCreator", "GameCreator", "{ADFBF72F-299A-4CBE-BEBC-F4B7690EEDF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGP.Domain", "SGP.Domain\SGP.Domain.csproj", "{2E47AF8A-A486-4168-A9B8-BDBAA5206E90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGP.Domain", "SGP.Domain\SGP.Domain.csproj", "{2E47AF8A-A486-4168-A9B8-BDBAA5206E90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGP.GameCreator.Webhost", "SGP.GameCreator.Webhost\SGP.GameCreator.Webhost.csproj", "{8074ABCB-4B5C-438D-97A3-B31EF8E0E8B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGP.GameCreator.Webhost", "SGP.GameCreator.Webhost\SGP.GameCreator.Webhost.csproj", "{8074ABCB-4B5C-438D-97A3-B31EF8E0E8B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

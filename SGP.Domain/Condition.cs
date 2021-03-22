@@ -2,7 +2,7 @@
 
 namespace SGP.Domain
 {
-    public class Condition : BaseType
+    public class Condition : BaseObject
     {
         public Attribute TargetAttribute { get; set; }
 

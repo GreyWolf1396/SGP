@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SGP.Domain
 {
-    public class Attribute : BaseType
+    public class Attribute : BaseObject
     {
         public ResourceType ResourceType { get; set; }
 

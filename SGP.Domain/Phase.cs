@@ -2,7 +2,7 @@
 
 namespace SGP.Domain
 {
-    public class Phase : BaseType
+    public class Phase : BaseObject
     {
         public int Number { get; set; }
 
