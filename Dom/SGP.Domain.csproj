@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>SGP.Domain</AssemblyName>
-    <RootNamespace>SGP.Domain</RootNamespace>
-  </PropertyGroup>
-
-</Project>

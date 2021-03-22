@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SGP.Domain
+﻿namespace SGP.Domain
 {
     public abstract class BaseType
     {
