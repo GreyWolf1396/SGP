@@ -2,7 +2,6 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using SGP.Domain;
 using SGP.GameCreator.Webhost.Models;
 using SGP.GameCreator.Webhost.Services.Interfaces;
 
@@ -17,14 +16,6 @@ namespace SGP.GameCreator.Webhost.Controllers
         public GamesController(IGameService gameService)
         {
             _gameService = gameService;
-        }
-
-        [HttpPost]
-        public async Task<GameModel> CreateGame(CreateGameRequest request)
-        {
-            var game = await _gameService.CreateGame(request.Name, request.Description);
-
-            return GameModel.FromDomain(game);
         }
 
         [HttpGet]
@@ -42,6 +33,30 @@ namespace SGP.GameCreator.Webhost.Controllers
             var game = await _gameService.GetById(id);
 
             return GameModel.FromDomain(game);
+        }
+
+        [HttpPost]
+        public async Task<GameModel> CreateGame(CreateGameRequest request)
+        {
+            var game = await _gameService.CreateGame(request.Name, request.Description);
+
+            return GameModel.FromDomain(game);
+        }
+
+        [HttpPut, HttpPatch]
+        [Route("{id}")]
+        public async Task<GameModel> UpdateGame(string id, GameModel model)
+        {
+            var game = await _gameService.UpdateGame(id, model.Name, model.Description);
+
+            return GameModel.FromDomain(game);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteGame(string id)
+        {
+            return Ok(await _gameService.DeleteGame(id));
         }
     }
 }

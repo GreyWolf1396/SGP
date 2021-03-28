@@ -14,8 +14,6 @@ namespace SGP.Domain
 
         public Attribute TargetAttribute { get; set; }
 
-        public int? NumberInChain { get; set; }
-
-        public bool IsChained => NumberInChain.HasValue;
+        public bool IsMandatory { get; set; }
     }
 }

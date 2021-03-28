@@ -2,9 +2,8 @@
 {
     public enum AttributeViewMode
     {
-        OpenForAll,
-        OpenForAlly
-
-
+        Hidden,
+        VisibleForPlayer,
+        Open
     }
 }

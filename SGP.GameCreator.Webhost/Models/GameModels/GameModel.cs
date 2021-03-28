@@ -2,14 +2,8 @@
 
 namespace SGP.GameCreator.Webhost.Models
 {
-    public class GameModel
+    public class GameModel : BaseObjectModel
     {
-        public string Id { get; set; }
-
-        public string Name { get; set; }
-
-        public string Description { get; set; }
-
         public static GameModel FromDomain(Game game)
         {
             if (game == null)

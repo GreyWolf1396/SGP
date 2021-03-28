@@ -11,5 +11,7 @@ namespace SGP.Domain
         public IEnumerable<Action> Actions { get; set; }
 
         public IEnumerable<Condition> Conditions { get; set; }
+
+        public bool IsMandatory { get; set; }
     }
 }

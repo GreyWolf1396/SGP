@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGP.Domain", "SGP.Domain\SG
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGP.GameCreator.Webhost", "SGP.GameCreator.Webhost\SGP.GameCreator.Webhost.csproj", "{8074ABCB-4B5C-438D-97A3-B31EF8E0E8B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGP.DAL", "SGP.GameCreator.DAL\SGP.DAL.csproj", "{C13C90F1-F943-43D4-9993-3728D5FE55E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{8074ABCB-4B5C-438D-97A3-B31EF8E0E8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8074ABCB-4B5C-438D-97A3-B31EF8E0E8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8074ABCB-4B5C-438D-97A3-B31EF8E0E8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13C90F1-F943-43D4-9993-3728D5FE55E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13C90F1-F943-43D4-9993-3728D5FE55E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13C90F1-F943-43D4-9993-3728D5FE55E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13C90F1-F943-43D4-9993-3728D5FE55E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2E47AF8A-A486-4168-A9B8-BDBAA5206E90} = {4AAC521F-B295-4B3C-8880-1F3253A9C128}
 		{8074ABCB-4B5C-438D-97A3-B31EF8E0E8B4} = {ADFBF72F-299A-4CBE-BEBC-F4B7690EEDF1}
+		{C13C90F1-F943-43D4-9993-3728D5FE55E7} = {4AAC521F-B295-4B3C-8880-1F3253A9C128}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B18D825-52CC-4E48-B3FF-D1B9E84ED4D4}

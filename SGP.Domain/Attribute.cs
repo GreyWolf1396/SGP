@@ -20,5 +20,11 @@ namespace SGP.Domain
         public bool IsMultiValued { get; set; }
 
         public bool IsConstant { get; set; }
+
+        public AttributeViewMode ViewMode { get; set; }
+
+        public AttributeLinkType LinkType { get; set; }
+
+        public string ParentId { get; set; }
     }
 }
