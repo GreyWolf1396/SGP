@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using SGP.Domain;
 using SGP.GameCreator.Webhost.Models;
 using SGP.GameCreator.Webhost.Services.Interfaces;
 
@@ -21,10 +24,24 @@ namespace SGP.GameCreator.Webhost.Controllers
         {
             var game = await _gameService.CreateGame(request.Name, request.Description);
 
-            return new GameModel()
-            {
-                Id = game.Id, Description = game.Description, Name = game.Name
-            };
+            return GameModel.FromDomain(game);
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<GameModel>> GetGames()
+        {
+            var games = await _gameService.GetList();
+
+            return games.Select(GameModel.FromDomain);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<GameModel> GetGameById(string id)
+        {
+            var game = await _gameService.GetById(id);
+
+            return GameModel.FromDomain(game);
         }
     }
 }

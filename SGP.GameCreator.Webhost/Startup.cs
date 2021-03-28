@@ -31,6 +31,11 @@ namespace SGP.GameCreator.Webhost
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SGP.GameCreator.Webhost", Version = "v1" });
             });
 
+            services.AddSimpleInjector(_container, opt =>
+            {
+                opt.AddAspNetCore().AddControllerActivation();
+            });
+
             _container.RegisterPackages(new[] { Assembly.GetExecutingAssembly() });
         }
 
