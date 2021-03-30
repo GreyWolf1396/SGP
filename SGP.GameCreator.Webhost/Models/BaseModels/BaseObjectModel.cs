@@ -1,4 +1,4 @@
-﻿namespace SGP.GameCreator.Webhost.Models
+﻿namespace SGP.GameCreator.Webhost.Models.BaseModels
 {
     public class BaseObjectModel
     {

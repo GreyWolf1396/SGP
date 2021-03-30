@@ -3,36 +3,38 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using SGP.DAL.Interfaces;
 using SGP.Domain;
+using SGP.Domain.Enums;
 using SGP.GameCreator.Webhost.Services.Interfaces;
 
 namespace SGP.GameCreator.Webhost.Services
 {
-    public class GameService : IGameService
+    public class GameService : ServiceBase, IGameService
     {
-        private readonly IRepository<Game> _gameRepository;
+        private readonly IRepository<Domain.Game> _gameRepository;
 
-        public GameService(IRepository<Game> gameRepository)
+        public GameService(IRepository<Domain.Game> gameRepository)
         {
             _gameRepository = gameRepository;
         }
 
-        public async Task<List<Game>> GetList()
+        public async Task<List<Domain.Game>> GetList()
         {
             return await _gameRepository.GetList();
         }
 
-        public async Task<Game> GetById(string id)
+        public async Task<Domain.Game> GetById(string id)
         {
             return await _gameRepository.GetById(id);
         }
 
-        public async Task<Game> CreateGame(string name, string description)
+        public async Task<Domain.Game> CreateGame(string name, string description)
         {
-            var game = new Game()
+            var game = new Domain.Game
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = GenerateId(),
                 Name = name,
-                Description = description
+                Description = description,
+                Phases = CreateInitialPhases()
             };
 
             await _gameRepository.Create(game);
@@ -40,9 +42,9 @@ namespace SGP.GameCreator.Webhost.Services
             return game;
         }
 
-        public async Task<Game> UpdateGame(string id, string name, string description)
+        public async Task<Domain.Game> UpdateGame(string id, string name, string description)
         {
-            var game = new Game()
+            var game = new Domain.Game()
             {
                 Id = id,
                 Name = name,
@@ -57,6 +59,27 @@ namespace SGP.GameCreator.Webhost.Services
         public async Task<bool> DeleteGame(string id)
         {
             return await _gameRepository.Delete(id);
+        }
+
+        private IEnumerable<Phase> CreateInitialPhases()
+        {
+            var phases = new List<Phase>();
+
+            foreach (PhaseType val in Enum.GetValues(typeof(PhaseType)))
+            {
+                var phase = new Phase
+                {
+                    Id = GenerateId(),
+                    Name = val.ToString(),
+                    IsMandatory = true,
+                    Number = (int) val,
+                    Type = val
+                };
+
+                phases.Add(phase);
+            }
+
+            return phases;
         }
     }
 }
