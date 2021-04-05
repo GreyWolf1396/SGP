@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SGP.Domain.Enums;
 
 namespace SGP.Domain
 {
@@ -11,6 +12,8 @@ namespace SGP.Domain
         public int Number { get; set; }
 
         public bool IsMandatory { get; set; }
+
+        public PhaseType Type { get; set; }
 
         public Phase NextPhase { get; set; }
 

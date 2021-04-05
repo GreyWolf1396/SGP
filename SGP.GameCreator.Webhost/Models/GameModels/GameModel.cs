@@ -1,22 +1,11 @@
-﻿using SGP.Domain;
+﻿using System.Collections.Generic;
+using SGP.GameCreator.Webhost.Models.BaseModels;
+using SGP.GameCreator.Webhost.Models.PhaseModels;
 
-namespace SGP.GameCreator.Webhost.Models
+namespace SGP.GameCreator.Webhost.Models.GameModels
 {
     public class GameModel : BaseObjectModel
     {
-        public static GameModel FromDomain(Game game)
-        {
-            if (game == null)
-            {
-                return null;
-            }
-
-            return new GameModel
-            {
-                Id = game.Id,
-                Name = game.Name,
-                Description = game.Description
-            };
-        }
+        public IEnumerable<PhaseModel> Phases { get; set; }
     }
 }

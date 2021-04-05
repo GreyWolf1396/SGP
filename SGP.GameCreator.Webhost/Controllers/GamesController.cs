@@ -2,7 +2,9 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using AutoMapper;
 using SGP.GameCreator.Webhost.Models;
+using SGP.GameCreator.Webhost.Models.GameModels;
 using SGP.GameCreator.Webhost.Services.Interfaces;
 
 namespace SGP.GameCreator.Webhost.Controllers
@@ -11,11 +13,13 @@ namespace SGP.GameCreator.Webhost.Controllers
     [ApiController]
     public class GamesController : ControllerBase
     {
-        private IGameService _gameService;
+        private readonly IGameService _gameService;
+        private readonly IMapper _mapper;
 
-        public GamesController(IGameService gameService)
+        public GamesController(IGameService gameService, IMapper mapper)
         {
             _gameService = gameService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -23,7 +27,7 @@ namespace SGP.GameCreator.Webhost.Controllers
         {
             var games = await _gameService.GetList();
 
-            return games.Select(GameModel.FromDomain);
+            return _mapper.Map<IEnumerable<GameModel>>(games);
         }
 
         [HttpGet]
@@ -32,7 +36,7 @@ namespace SGP.GameCreator.Webhost.Controllers
         {
             var game = await _gameService.GetById(id);
 
-            return GameModel.FromDomain(game);
+            return _mapper.Map<GameModel>(game);
         }
 
         [HttpPost]
@@ -40,7 +44,7 @@ namespace SGP.GameCreator.Webhost.Controllers
         {
             var game = await _gameService.CreateGame(request.Name, request.Description);
 
-            return GameModel.FromDomain(game);
+            return _mapper.Map<GameModel>(game);
         }
 
         [HttpPut, HttpPatch]
@@ -49,7 +53,7 @@ namespace SGP.GameCreator.Webhost.Controllers
         {
             var game = await _gameService.UpdateGame(id, model.Name, model.Description);
 
-            return GameModel.FromDomain(game);
+            return _mapper.Map<GameModel>(game);
         }
 
         [HttpDelete]
