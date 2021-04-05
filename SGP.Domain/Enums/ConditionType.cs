@@ -2,15 +2,17 @@
 {
     public enum ConditionType
     {
-        LessThan,
-        LessThanOrEqual,
-        Equal,
-        NotEqual,
-        GreaterThanOrEqual,
-        GreaterThan,
+        And,
+        Or,
+        Not,
 
         Contains,
-        NotContain,
-        Any
+        Equal,
+
+        Greater,
+        Less,
+
+        GreaterOrEqual,
+        LessOrEqual
     }
 }

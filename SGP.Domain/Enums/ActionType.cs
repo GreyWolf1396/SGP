@@ -2,14 +2,24 @@
 {
     public enum ActionType
     {
+        AddFrom,
         Add,
-        Set,
+
         Remove,
-        Move,
+        RemoveBy,
 
-        Increase,
-        Decrease,
+        Shuffle,
 
-        Shuffle
+        Search,
+        Choose,
+        Set,
+        Sort,
+
+        AddMechanic,
+        RemoveMechanic,
+
+        StopMechanicExecution,
+
+        MoveToPhase
     }
 }

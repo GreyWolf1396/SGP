@@ -4,6 +4,10 @@ namespace SGP.Domain
 {
     public class Actor : BaseObject
     {
+        public string GameId { get; set; }
+
+        public Game Game { get; set; }
+
         public IEnumerable<Attribute> Characteristics { get; set; }
 
         public IEnumerable<Actor> SubActors { get; set; }

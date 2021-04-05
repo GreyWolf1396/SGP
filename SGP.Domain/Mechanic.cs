@@ -8,9 +8,11 @@ namespace SGP.Domain
 
         public Phase Phase { get; set; }
 
-        public IEnumerable<Action> Actions { get; set; }
+        public string ActorId { get; set; }
 
-        public IEnumerable<Condition> Conditions { get; set; }
+        public Actor Actor { get; set; }
+
+        public IEnumerable<Action> Actions { get; set; }
 
         public bool IsMandatory { get; set; }
     }

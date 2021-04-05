@@ -1,4 +1,5 @@
 ﻿using SGP.Domain.Enums;
+using System.Collections.Generic;
 
 namespace SGP.Domain
 {
@@ -9,5 +10,7 @@ namespace SGP.Domain
         public Attribute SourceAttribute { get; set; }
 
         public ConditionType Type { get; set; }
+
+        public IEnumerable<Condition> SubConditions { get; set; }
     }
 }

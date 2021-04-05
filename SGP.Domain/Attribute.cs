@@ -9,22 +9,18 @@ namespace SGP.Domain
 
         public AttributeType Type { get; set; }
 
-        public IList<int> ValueInt { get; set; }
-
-        public IList<string> ValueString { get; set; }
-
-        public IList<bool> ValueBool { get; set; }
-
         public IList<Attribute> SubAttributres { get; set; }
+
+
+
+        public string ParentAttributeId { get; set; }
+
+        public Attribute ParentAttribute { get; set; }
 
         public bool IsMultiValued { get; set; }
 
         public bool IsConstant { get; set; }
 
         public AttributeViewMode ViewMode { get; set; }
-
-        public AttributeLinkType LinkType { get; set; }
-
-        public string ParentId { get; set; }
     }
 }
